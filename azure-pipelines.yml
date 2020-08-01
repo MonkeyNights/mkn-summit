@@ -16,7 +16,7 @@ variables:
 
 # Publish Blazor App
 steps:
-- script: dotnet publish src\MknSummit.Web\MknSummit.Web.csproj --configuration $(buildConfiguration) --output $(buildOutput)
+- script: dotnet publish src/MknSummit.Web/MknSummit.Web.csproj --configuration $(buildConfiguration) --output $(buildOutput)
   displayName: 'Publish Blazor Site'
 
 # Install netlify-cli
@@ -25,5 +25,5 @@ steps:
 
 # Deploy the wwwroot
 # The argument "--prod" deploys to  
-- script: npx netlify deploy --prod --dir $(buildOutput)/wwwroot --site $(netlify_site_id) --auth $(netlify_token)
+- script: npx netlify deploy --prod --dir $(buildOutput)/wwwroot --site '$(netlify_site_id)' --auth '$(netlify_api_key)'
   displayName: 'Deploy site to Netlify'
