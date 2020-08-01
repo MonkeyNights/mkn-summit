@@ -1,0 +1,28 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  buildConfiguration: 'Release'
+  buildOutput: '.dist' # Output directory for publish
+
+# Publish Blazor App
+steps:
+- script: dotnet publish src\MknSummit.Web\MknSummit.Web.csproj --configuration $(buildConfiguration) --output $(buildOutput)
+  displayName: 'Publish Blazor Site'
+
+# Install netlify-cli
+- script: npm install netlify-cli 
+  displayName: 'Install netlify-cli'
+
+# Deploy the wwwroot
+# The argument "--prod" deploys to  
+- script: npx netlify deploy --prod --dir $(buildOutput)/wwwroot --site $(netlify_site_id) --auth $(netlify_token)
+  displayName: 'Deploy site to Netlify'
