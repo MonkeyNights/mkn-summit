@@ -15,8 +15,17 @@ variables:
 
 # Publish Blazor App
 steps:
-- script: dotnet publish src\MknSummit.Web\MknSummit.Web.csproj --configuration $(buildConfiguration) --output $(buildOutput)
+- task: DotNetCoreCLI@2
   displayName: 'Publish Blazor Site'
+  inputs:
+    projects: '**/*.csproj'
+    command: 'publish'
+    publishWebProjects: true
+    zipAfterPublish: false
+    workingDirectory: '$(buildOutput)'
+
+#- script: dotnet publish src\MknSummit.Web\MknSummit.Web.csproj --configuration $(buildConfiguration) --output $(buildOutput)
+#  displayName: 'Publish Blazor Site'
 
 # Install netlify-cli
 - script: npm install netlify-cli 
