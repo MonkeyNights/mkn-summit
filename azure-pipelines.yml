@@ -10,6 +10,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
+  group: netlify
   buildConfiguration: 'Release'
   buildOutput: '.dist' # Output directory for publish
 
