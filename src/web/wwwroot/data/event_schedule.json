@@ -1,0 +1,220 @@
+﻿{
+  "dayAndHour": "0001-01-01T00:00:00",
+  "sessions": [
+    {
+      "title": "",
+      "description": "",
+      "tags": [],
+      "speakers": {
+        "name": "Pedro Henrique de Souza Jesus",
+        "avatar": "assets/img/speakers/pedro.jpg",
+        "bio": "Sou desenvolvedor C#, focado em fazer aplicativos móveis usando Xamarin, na ArcTouch❣ No tempo livre gosto de contribuir com projetos Open Source, atualmente meus maiores esforços são direcionados ao Xamarin.Forms e Xamarin.Essentials, também gero conteúdo em streaming, em artigos e em vídeos.",
+        "position": " Engenheiro de Software C# @ ArcTouch",
+        "socialProfiles": [
+          {
+            "url": "https://twitter.com/pj_souz"
+          },
+          {
+            "url": "http://github.com/pictos"
+          }
+        ]
+      },
+      "slidesUrl": ""
+    },
+    {
+      "title": "",
+      "description": "",
+      "tags": [],
+      "speakers": {
+        "name": "Diego Bonilla",
+        "avatar": "assets/img/speakers/diego.jpg",
+        "bio": "CEO & co-founder of Nareia, organizer of XamarinUY",
+        "position": "CEO @ Nareia",
+        "socialProfiles": [
+          {
+            "url": "https://twitter.com/dbonillanareia"
+          },
+          {
+            "url": "https://www.linkedin.com/in/diebonilla/"
+          }
+        ]
+      },
+      "slidesUrl": ""
+    },
+    {
+      "title": "",
+      "description": "",
+      "tags": [],
+      "speakers": {
+        "name": "Nicolas Milcoff",
+        "avatar": "assets/img/speakers/nico.png",
+        "bio": "Nicolas is a mobile development expert. He works as CTO at XABLU and he is also a Microsoft MVP who actively contributes to / maintains open source projects in the mobile space like MvvmCross. Nico is also an international speaker and trainer who loves to push forward the technologies he works with.",
+        "position": "CTO @ XABLU",
+        "socialProfiles": [
+          {
+            "url": "https://twitter.com/nmilcoff"
+          },
+          {
+            "url": "https://github.com/nmilcoff/"
+          },
+          {
+            "url": "https://www.linkedin.com/in/nmilcoff/"
+          }
+        ]
+      },
+      "slidesUrl": ""
+    },
+    {
+      "title": "",
+      "description": "",
+      "tags": [],
+      "speakers": {
+        "name": "Ione Souza Junior",
+        "avatar": "assets/img/speakers/ione.jpg",
+        "bio": "Desenvolvedor mobile, entusiasta de Xamarin. Motivado por desafios e por contribuir com a comunidade. Pai de cachorro, viciado em código & café.",
+        "position": "Desenvolvedor Mobile @ Mercos",
+        "socialProfiles": [
+          {
+            "url": "https://twitter.com/ionixjunior"
+          },
+          {
+            "url": "https://github.com/ionixjunior"
+          },
+          {
+            "url": "https://www.linkedin.com/in/ionixjunior/"
+          }
+        ]
+      },
+      "slidesUrl": ""
+    },
+    {
+      "title": "",
+      "description": "",
+      "tags": [],
+      "speakers": {
+        "name": "Brandon Minnick",
+        "avatar": "assets/img/speakers/brandon.png",
+        "bio": "I am on the Developer Advocate team at Microsoft, and I love C#, .NET, and Mobile App development.  I worked at Xamarin (before the Microsoft acquisition) and continue to share my passions with fellow Xamarin, C# and Cloud developers.  I am an avid coder and have developed countless apps. I love working closely with the developer community, helping fellow mobile app and cloud developers make 5-star apps.",
+        "position": "Developer Advocate @ Microsoft",
+        "socialProfiles": [
+          {
+            "url": "https://twitter.com/TheCodeTraveler"
+          },
+          {
+            "url": "https://github.com/brminnick"
+          },
+          {
+            "url": "https://www.linkedin.com/in/brandon-minnick/"
+          }
+        ]
+      },
+      "slidesUrl": ""
+    },
+    {
+      "title": "",
+      "description": "",
+      "tags": [],
+      "speakers": {
+        "name": "Thiago Bertuzzi",
+        "avatar": "assets/img/speakers/bertuzzi.png",
+        "bio": "Arquiteto .Net e Lider técnico na NESS, trabalho com .net há 13 anos participando de projetos Desktop,Services, Web e agora Mobile utilizando Xamarin.",
+        "position": "Arquiteto .Net e Lider técnico @ NESS",
+        "socialProfiles": [
+          {
+            "url": "https://twitter.com/tbertuzzi"
+          },
+          {
+            "url": "https://github.com/tbertuzzi"
+          },
+          {
+            "url": "https://www.linkedin.com/in/thiago-bertuzzi-74ab2a21/"
+          }
+        ]
+      },
+      "slidesUrl": ""
+    },
+    {
+      "title": "",
+      "description": "",
+      "tags": [],
+      "speakers": {
+        "name": "Alejandro Ruiz",
+        "avatar": "assets/img/speakers/alejandro.jpg",
+        "bio": "I'm a very experienced mobile app developer and architect using Xamarin framework, I have been working over 8+ years helping companies to ship 5 stars apps around the globe, currently I'm a Microsoft MVP: Developer Technologies and I'm helping communities and companies to improve his skills on mobile development and converting ideas into awesome experiences also I was Xamarin Certified Mobile Developer from 2013 to 2019 & I got awarded with the Xamarin MVP on 2017.",
+        "position": "Mobile Developer @ ArcTouch",
+        "socialProfiles": [
+          {
+            "url": "https://twitter.com/alejandroruizva"
+          },
+          {
+            "url": "https://github.com/alejandroruiz"
+          },
+          {
+            "url": "https://www.linkedin.com/in/alejandro-ruiz-533a0a88/"
+          }
+        ]
+      },
+      "slidesUrl": ""
+    },
+    {
+      "title": "",
+      "description": "",
+      "tags": [],
+      "speakers": {
+        "name": "Yan Ariel Fernandes de Souza",
+        "avatar": "assets/img/speakers/yan.png",
+        "bio": "Atuando a 9 anos em produtos de tecnologia e atualmente ajudando o brasileiro a investir melhor em renda variável",
+        "position": "Product Manager @ XP Inc.",
+        "socialProfiles": [
+          {
+            "url": "https://www.linkedin.com/in/yanfernandes130593/"
+          }
+        ]
+      },
+      "slidesUrl": ""
+    },
+    {
+      "title": "",
+      "description": "",
+      "tags": [],
+      "speakers": {
+        "name": "Brian Lagunas",
+        "avatar": "assets/img/speakers/brian.png",
+        "bio": "Works at Infragistics | Owner of Prism | Microsoft MVP | Xamarin MVP | Speaker | Trainer | Pluralsight Author",
+        "position": "Infragistics",
+        "socialProfiles": [
+          {
+            "url": "https://github.com/brianlagunas"
+          },
+          {
+            "url": "https://twitter.com/brianlagunas"
+          }
+        ]
+      },
+      "slidesUrl": ""
+    },
+    {
+      "title": "",
+      "description": "",
+      "tags": [],
+      "speakers": {
+        "name": "Dan Siegel",
+        "avatar": "assets/img/speakers/dan.png",
+        "bio": "Dan is a Microsoft MVP, long time OSS maintainer, consultant and founder of the Xamarin Developer Summit #XamDevSummit. A passion for innovation and problem solving leads him to deliver leading solutions like #PrismLib and the Mobile.BuildTools.  A long time tech junkie, Dan has a firm belief that you should never stop learning and always be humble enough to remember you will never know everything. He has worked with clients small and large always driving innovation and helped transform many developers into constant learners. When he's not busy coding you can find him somewhere in nature, scuba diving, hiking, generally decompressing anywhere cell phones stop working.",
+        "position": "AvantiPoint",
+        "socialProfiles": [
+          {
+            "url": "https://github.com/dansiegel"
+          },
+          {
+            "url": "https://twitter.com/DanJSiegel"
+          },
+          {
+            "url": "https://linkedin.com/in/dansiegel"
+          }
+        ]
+      },
+      "slidesUrl": ""
+    }
+  ]
+}

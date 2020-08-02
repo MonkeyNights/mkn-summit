@@ -1,9 +1,5 @@
 ﻿@page "/"
 @inject HttpClient Http
-@inject MknSummit.Core.Models.Agenda Agenda
-@inject MknSummit.Core.Models.Speaker Speaker
-@inject MknSummit.Core.Models.Session Session
-@inject MknSummit.Core.Models.SocialMedia SocialMedia
 
 <div class="uk-flex
 uk-flex-center
@@ -38,7 +34,7 @@ uk-position-relative header">
     <div class="uk-container uk-container uk-flex-auto uk-text-center"
          data-uk-scrollspy="target: > .animate; cls: uk-animation-slide-bottom-small uk-invisible; delay: 300">
         <div class="uk-width-4-5@m uk-margin-auto animate uk-invisible">
-            <img src="../../../../assets/img/logo_xamarin_summit_live.svg" title="Xamarin Summit Live"
+            <img src="../assets/img/logo_xamarin_summit_live.svg" title="Xamarin Summit Live"
                  alt="Xamarin Summit Live" />
         </div>
     </div>
@@ -115,35 +111,59 @@ uk-position-relative header">
             destaques em suas áreas de atuação.
         </p>
         <div class="uk-flex uk-flex-center" uk-grid="masonry: true">
-            <div class="uk-width-1-4@m uk-width-1-1@s" *ngFor="let item of speakers">
-                <div class="uk-card uk-card-default uk-card-hover uk-card-small uk-margin-small">
-                    <div class="uk-card-media-top">
-                        <img width="100%" src="item.speaker.avatar" alt="item.name + item.position" />
+            @if (schedule == null)
+            {
+                <p><em>Loading...</em></p>
+            }
+            else
+            {
+                @foreach (var session in schedule.Sessions)
+                {
+                    <div class="uk-width-1-4@m uk-width-1-1@s" *ngFor="let item of speakers">
+                        <div class="uk-card uk-card-default uk-card-hover uk-card-small uk-margin-small">
+                            <div class="uk-card-media-top">
+                                <img width="100%" src="@session.Speaker.Avatar" alt="@session.Speaker.Name - @session.Speaker.Position" />
+                            </div>
+                            <div class="uk-card-body">
+                                <h5 class="uk-card-title uk-margin-remove-bottom">
+                                    @session.Speaker.Name
+                                </h5>
+                                <span class="uk-text-meta dart-text uk-text-center">
+                                    @session.Speaker.Position
+                                </span>
+                            </div>
+                            <div class="uk-card-footer">
+                                @foreach (var socialProfile in @session.Speaker.SocialProfiles)
+                                {
+                                    <span>
+                                        <a href="@socialProfile.Url" target="_blank">
+
+                                            @switch (socialProfile.Type)
+                                            {
+                                                case 1:
+                                                    <span class="dart-text uk-margin-right" uk-icon="twitter"></span>
+                                                    break;
+                                                case 2:
+                                                    <span class="dart-text uk-margin-right" uk-icon="facebook"></span>
+                                                    break;
+                                                case 3:
+                                                    <span class="dart-text uk-margin-right" uk-icon="github"></span>
+                                                    break;
+                                                case 4:
+                                                    <span class="dart-text uk-margin-right" uk-icon="linkedin"></span>
+                                                    break;
+                                                default:
+                                                    <span class="dart-text uk-margin-right" uk-icon="link"></span>
+                                                    break;
+                                            }
+                                        </a>
+                                    </span>
+                                }
+                            </div>
+                        </div>
                     </div>
-                    <div class="uk-card-body">
-                        <h5 class="uk-card-title uk-margin-remove-bottom">
-                            {{ item.speaker.name }}
-                        </h5>
-                        <span class="uk-text-meta dart-text uk-text-center">
-                            {{
-                  item.speaker.position
-                            }}
-                        </span>
-                    </div>
-                    <div class="uk-card-footer">
-                        <span *ngFor="let social of item.speaker.social">
-                            <a *ngIf="social.url" href="social.url" target="_blank">
-                                <!--
-                                <span *ngIf="social.type === 'linkedin'" class="dart-text uk-margin-right	" uk-icon="linkedin"></span>
-                                <span *ngIf="social.type === 'facebook'" class="dart-text uk-margin-right	" uk-icon="facebook"></span>
-                                <span *ngIf="social.type === 'twitter'" class="dart-text uk-margin-right	" uk-icon="twitter"></span>
-                                <span *ngIf="social.type === 'github'" class="dart-text uk-margin-right	" uk-icon="github"></span>
-                                    -->
-                            </a>
-                        </span>
-                    </div>
-                </div>
-            </div>
+                }
+            }
         </div>
         <p class="uk-text-meta">
             Palestrantes confirmados até o momento!
@@ -175,7 +195,7 @@ uk-position-relative header">
     </div>
 </section>
 <!-- PHOTOS -->
-<section>
+@*<section>
     <div class="uk-child-width-expand@s uk-padding-remove uk-margin-remove" uk-grid>
         <div *ngFor="let item of photos" uk-lightbox class="uk-background-muted uk-padding-remove">
             <a href="{{ item.path }}">
@@ -183,7 +203,7 @@ uk-position-relative header">
             </a>
         </div>
     </div>
-</section>
+</section>*@
 <section class="uk-section uk-section-small uk-margin-remove uk-padding-remove custom-bg-white">
     <p class="uk-padding"></p>
     <header class="uk-text-center uk-margin uk-padding">
@@ -198,7 +218,7 @@ uk-position-relative header">
             </div>
             <div>
                 <a href="https://www.jetbrains.com/?utm_source=xamarinsummit-brasil&utm_medium=home&utm_campaign=support" target="_blank">
-                    <img width="40%" src="../../../assets/img/sponsors/jetbrains.svg">
+                    <img width="40%" src="assets/img/sponsors/jetbrains.svg">
                 </a>
             </div>
             <div>
@@ -219,7 +239,7 @@ uk-position-relative header">
             <div class="uk-width-1-4@m uk-width-1-1@s">
                 <div class="uk-card uk-card-default uk-card-hover uk-card-small uk-margin-small">
                     <div class="uk-card-media-top">
-                        <img width="100%" src="../../../assets/img/team/magoo.jpeg" alt="Alexandre Santos Costa" />
+                        <img width="100%" src="assets/img/team/magoo.jpeg" alt="Alexandre Santos Costa" />
                     </div>
                     <div class="uk-card-body">
                         <h5 class="uk-card-title uk-margin-remove-bottom">
@@ -245,7 +265,7 @@ uk-position-relative header">
             <div class="uk-width-1-4@m uk-width-1-1@s">
                 <div class="uk-card uk-card-default uk-card-hover uk-card-small uk-margin-small">
                     <div class="uk-card-media-top">
-                        <img width="100%" src="../../../assets/img/team/angelo.jpeg" alt="Angelo Belchior" />
+                        <img width="100%" src="assets/img/team/angelo.jpeg" alt="Angelo Belchior" />
                     </div>
                     <div class="uk-card-body">
                         <h5 class="uk-card-title uk-margin-remove-bottom">
@@ -271,7 +291,7 @@ uk-position-relative header">
             <div class="uk-width-1-4@m uk-width-1-1@s">
                 <div class="uk-card uk-card-default uk-card-hover uk-card-small uk-margin-small">
                     <div class="uk-card-media-top">
-                        <img width="100%" src="../../../assets/img/team/oberdan.jpeg" alt="Oberdan Bitencourt Ferreira" />
+                        <img width="100%" src="assets/img/team/oberdan.jpeg" alt="Oberdan Bitencourt Ferreira" />
                     </div>
                     <div class="uk-card-body">
                         <h5 class="uk-card-title uk-margin-remove-bottom">
@@ -297,7 +317,7 @@ uk-position-relative header">
             <div class="uk-width-1-4@m uk-width-1-1@s">
                 <div class="uk-card uk-card-default uk-card-hover uk-card-small uk-margin-small">
                     <div class="uk-card-media-top">
-                        <img width="100%" src="../../../assets/img/team/william.jpeg" alt=" William S Rodriguez" />
+                        <img width="100%" src="assets/img/team/william.jpeg" alt=" William S Rodriguez" />
                     </div>
                     <div class="uk-card-body">
                         <h5 class="uk-card-title uk-margin-remove-bottom">
@@ -387,10 +407,17 @@ uk-position-relative header">
 </footer>
 
 @code {
-    private List<Agenda> agenda;
 
-    protected override async Task OnInitializedAsync()
-    {
-        agenda = await Http.GetFromJsonAsync<List<Agenda>>("data/agenda.json");
+    private MknSummit.Core.Models.Schedule schedule;
+
+    protected override async Task OnInitializedAsync() {
+        try
+        {
+            schedule = await Http.GetFromJsonAsync<MknSummit.Core.Models.Schedule>("data/schedule.json");
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
     }
 }

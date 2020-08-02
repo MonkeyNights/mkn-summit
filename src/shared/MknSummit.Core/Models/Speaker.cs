@@ -12,26 +12,11 @@ namespace MknSummit.Core.Models
         public string Avatar { get; private set; }
         public string Bio { get; private set; }
         public string Position { get; private set; }
-        public Dictionary<SocialMedia, string> SocialProfiles { get; private set; }
+        public List<SocialMedia> SocialProfiles { get; private set; }
 
         public CommunityPerson()
         {
-            SocialProfiles = new Dictionary<SocialMedia, string>();
+            SocialProfiles = new List<SocialMedia>();
         }
-
-        public static CommunityPerson Create(
-                string name
-                , string avatar
-                , string bio
-                , string position
-                , Dictionary<SocialMedia, string> socialProfiles) =>
-                new CommunityPerson
-                {
-                    Name = name,
-                    Avatar = avatar,
-                    Bio = bio,
-                    Position = position,
-                    SocialProfiles = socialProfiles
-                };
     }
 }
