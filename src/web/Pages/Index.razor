@@ -1,7 +1,382 @@
 ﻿@page "/"
 
-<h1>Hello, world!</h1>
+<div class="uk-flex
+uk-flex-center
+uk-flex-middle
+uk-section-large
+uk-position-z-index
+uk-position-relative header">
+    <!-- NAV -->
+    <div class="uk-position-top">
+        <!-- <div class="uk-container">
+          <nav class="uk-navbar-container uk-navbar-transparent" data-uk-navbar>
+            <div class="uk-navbar-left">
+              <div class="uk-navbar-item">
+                <a class="uk-logo" href="/"></a>
+              </div>
+            </div>
+            <div class="uk-navbar-right">
+              <ul class="uk-navbar-nav">
+                <li class="uk-visible@s" *ngFor="let page of pages">
+                  <a title="{{ page.description }}" href="{{ page.route }}">{{ page.title }}</a>
+                </li>
+                <li>
+                  <a class="uk-navbar-toggle" data-uk-toggle data-uk-navbar-toggle-icon href="#offcanvas-nav"></a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div> -->
+    </div>
+    <!-- /NAV -->
+    <!-- TEXT -->
+    <div class="uk-container uk-container uk-flex-auto uk-text-center"
+         data-uk-scrollspy="target: > .animate; cls: uk-animation-slide-bottom-small uk-invisible; delay: 300">
+        <div class="uk-width-4-5@m uk-margin-auto animate uk-invisible">
+            <img src="../../../../assets/img/logo_xamarin_summit_live.svg" title="Xamarin Summit Live"
+                 alt="Xamarin Summit Live" />
+        </div>
+    </div>
+    <!-- /TEXT -->
+</div>
+<!-- CONTENT -->
+<section class="uk-section uk-section-large uk-section-secondary uk-text-center tickets-section"
+         data-uk-scrollspy="target: > .animate; cls: uk-animation-slide-bottom-small uk-invisible; delay: 300">
+    <div class="uk-width-4-5@m uk-margin-auto animate uk-invisible">
+        <h1 class="uk-heading-primary animate">
+            O mais tradicional encontro de pessoas desenvolvedoras Xamarin da América Latina
+        </h1>
+        <div class="uk-width-4-5@m uk-margin-auto animate">
+            <h2 class="lead text-white">
+                De 10 até 14 de Agosto, online e de graça!
+            </h2>
+        </div>
+    </div>
+    <div class="uk-margin-large-top animate uk-invisible" data-uk-margin
+         data-uk-scrollspy-class="uk-animation-fade uk-invisible">
+        <a class="uk-button uk-button-primary uk-button-large uk-width-2-3 uk-width-auto@s tickets-button"
+           title="Garanta a inscrição agora!" href="https://www.sympla.com.br/xamarin-summit-2020__909089" target="_blank">
+            Garanta a
+            inscrição agora!
+        </a>
+    </div>
+</section>
+<section class="uk-section uk-section-large uk-section-secondary">
+    <div class="uk-container uk-container-small uk-text-center">
+        <h1>Comunidade e Networking</h1>
+        <p class="uk-text-large">
+            O Xamarin Summit é um grande encontro da comunidade brasileira pessoas desenvolvedoras Xamarin, permitindo um
+            ambiente totalmente favorável a troca de experiências e networking.
+        </p>
+        <div class="uk-text-center capiconf-center">
+            <div class="uk-grid-small" uk-grid uk-countdown="date: 2020-08-10T19:00:00+00:00">
+                <div>
+                    <div class="uk-countdown-number uk-countdown-days"></div>
+                    <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">
+                        Dias
+                    </div>
+                </div>
+                <div class="uk-countdown-separator">:</div>
+                <div>
+                    <div class="uk-countdown-number uk-countdown-hours"></div>
+                    <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">
+                        Horas
+                    </div>
+                </div>
+                <div class="uk-countdown-separator">:</div>
+                <div>
+                    <div class="uk-countdown-number uk-countdown-minutes"></div>
+                    <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">
+                        Minutos
+                    </div>
+                </div>
+                <div class="uk-countdown-separator">:</div>
+                <div>
+                    <div class="uk-countdown-number uk-countdown-seconds"></div>
+                    <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">
+                        Segundos
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- speakers -->
+<section class="uk-padding-large custom-bg-white">
+    <div class="uk-container uk-container uk-text-center">
+        <h1 class="custom-heading">Pessoas palestrantes</h1>
+        <p class="uk-text-large dart-text">
+            Palestrantes e pessoas influenciadoras que são reconhecidos nacionalmente como
+            destaques em suas áreas de atuação.
+        </p>
+        <div class="uk-flex uk-flex-center" uk-grid="masonry: true">
+            <div class="uk-width-1-4@m uk-width-1-1@s" *ngFor="let item of speakers">
+                <div class="uk-card uk-card-default uk-card-hover uk-card-small uk-margin-small">
+                    <div class="uk-card-media-top">
+                        <img width="100%" src="item.speaker.avatar" alt="item.name + item.position" />
+                    </div>
+                    <div class="uk-card-body">
+                        <h5 class="uk-card-title uk-margin-remove-bottom">
+                            {{ item.speaker.name }}
+                        </h5>
+                        <span class="uk-text-meta dart-text uk-text-center">
+                            {{
+                  item.speaker.position
+                            }}
+                        </span>
+                    </div>
+                    <div class="uk-card-footer">
+                        <span *ngFor="let social of item.speaker.social">
+                            <a *ngIf="social.url" href="social.url" target="_blank">
+                                <!--
+    <span *ngIf="social.type === 'linkedin'" class="dart-text uk-margin-right	" uk-icon="linkedin"></span>
+    <span *ngIf="social.type === 'facebook'" class="dart-text uk-margin-right	" uk-icon="facebook"></span>
+    <span *ngIf="social.type === 'twitter'" class="dart-text uk-margin-right	" uk-icon="twitter"></span>
+    <span *ngIf="social.type === 'github'" class="dart-text uk-margin-right	" uk-icon="github"></span>
+        -->
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="uk-text-meta">
+            Palestrantes confirmados até o momento!
+        </p>
+    </div>
+</section>
+<!-- CONVENÇA SEUS/SUAS LÍDERES -->
+<section class="uk-section-large leaders">
+    <div class="uk-container  uk-text-left">
+        <div uk-grid class="text-white">
+            <div class="uk-width-1-1@m">
+                <h1 class="text-white">Por que o Xamarin Summit?</h1>
+            </div>
+            <div class="uk-width-expand@m">
+                <p class="uk-text-large">
+                    Conteúdo apresentado por palestrantes de empresas inovadoras e pioneiras do Brasil e do mundo.
+                </p>
+                <p class="uk-text-large">
+                    O evento técnico com os palestrantes de maior senioridade do Brasil quando o assunto é Xamarin.
+                </p>
+                <p class="uk-text-large">
+                    Ambiente propício para troca de experiências e contatos.
+                </p>
+                <p class="uk-text-large">
+                    Palestras com cases reais e conteúdo técnico aplicável em seu dia a dia.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- PHOTOS -->
+<section>
+    <div class="uk-child-width-expand@s uk-padding-remove uk-margin-remove" uk-grid>
+        <div *ngFor="let item of photos" uk-lightbox class="uk-background-muted uk-padding-remove">
+            <a href="{{ item.path }}">
+                <img src="{{ item.path }}" />
+            </a>
+        </div>
+    </div>
+</section>
+<section class="uk-section uk-section-small uk-margin-remove uk-padding-remove custom-bg-white">
+    <p class="uk-padding"></p>
+    <header class="uk-text-center uk-margin uk-padding">
+        <h1 class="uk-heading-primary custom-heading">Apoio</h1>
+        <p class="uk-width-3-5 uk-margin-auto dart-text">
+            Empresas, comunidades e organizações que apoiam o
+            Xamarin Summit Live
+        </p>
+        <p class="uk-padding"></p>
+        <div class="uk-child-width-expand@s uk-text-center" uk-grid>
+            <div>
+            </div>
+            <div>
+                <a href="https://www.jetbrains.com/?utm_source=xamarinsummit-brasil&utm_medium=home&utm_campaign=support" target="_blank">
+                    <img width="40%" src="../../../assets/img/sponsors/jetbrains.svg">
+                </a>
+            </div>
+            <div>
+            </div>
+        </div>
+        <p class="uk-padding"></p>
+    </header>
+</section>
+<!-- team -->
+<section class="uk-padding-large" style="background: #EBEBEB;">
+    <div class="uk-padding"></div>
+    <div class="uk-container uk-container uk-text-center">
+        <h1 class="custom-heading">Organizadores</h1>
+        <p class="uk-text-large dart-text">
+            O Xamarin Summit é organizado com muito ❤️ por um time incrível de pessoas.
+        </p>
+        <div class="uk-flex uk-flex-center" uk-grid="masonry: true">
+            <div class="uk-width-1-4@m uk-width-1-1@s">
+                <div class="uk-card uk-card-default uk-card-hover uk-card-small uk-margin-small">
+                    <div class="uk-card-media-top">
+                        <img width="100%" src="../../../assets/img/team/magoo.jpeg" alt="Alexandre Santos Costa" />
+                    </div>
+                    <div class="uk-card-body">
+                        <h5 class="uk-card-title uk-margin-remove-bottom">
+                            Alexandre Santos Costa
+                        </h5>
+                        <span class="uk-text-meta dart-text uk-text-center">
+                            Chapter Lead at ArcTouch - Mobile & Connected
+                            Experiences
+                        </span>
+                    </div>
+                    <div class="uk-card-footer">
+                        <span>
+                            <a href="http://localhost:4200/past/2018/index.html" target="_blank">
+                                <span class="dart-text uk-margin-right	" uk-icon="linkedin"></span>
+                            </a>
+                            <a href="https://twitter.com/magoolation" target="_blank">
+                                <span class="dart-text uk-margin-right	" uk-icon="twitter"></span>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-width-1-4@m uk-width-1-1@s">
+                <div class="uk-card uk-card-default uk-card-hover uk-card-small uk-margin-small">
+                    <div class="uk-card-media-top">
+                        <img width="100%" src="../../../assets/img/team/angelo.jpeg" alt="Angelo Belchior" />
+                    </div>
+                    <div class="uk-card-body">
+                        <h5 class="uk-card-title uk-margin-remove-bottom">
+                            Angelo Belchior
+                        </h5>
+                        <span class="uk-text-meta dart-text uk-text-center">
+                            Cloud Solutions Architect. Microsoft MVP em duas
+                            categorias – AI e Developer Technologies
+                        </span>
+                    </div>
+                    <div class="uk-card-footer">
+                        <span>
+                            <a href="https://www.linkedin.com/in/angelobelchior/" target="_blank">
+                                <span class="dart-text uk-margin-right	" uk-icon="linkedin"></span>
+                            </a>
+                            <a href="https://twitter.com/angelobelchior" target="_blank">
+                                <span class="dart-text uk-margin-right	" uk-icon="twitter"></span>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-width-1-4@m uk-width-1-1@s">
+                <div class="uk-card uk-card-default uk-card-hover uk-card-small uk-margin-small">
+                    <div class="uk-card-media-top">
+                        <img width="100%" src="../../../assets/img/team/oberdan.jpeg" alt="Oberdan Bitencourt Ferreira" />
+                    </div>
+                    <div class="uk-card-body">
+                        <h5 class="uk-card-title uk-margin-remove-bottom">
+                            Oberdan Bitencourt Ferreira
+                        </h5>
+                        <span class="uk-text-meta dart-text uk-text-center">
+                            Chapter Lead at ArcTouch - Mobile & Connected
+                            Experiences
+                        </span>
+                    </div>
+                    <div class="uk-card-footer">
+                        <span>
+                            <a href="https://www.linkedin.com/in/oberdanf/" target="_blank">
+                                <span class="dart-text uk-margin-right	" uk-icon="linkedin"></span>
+                            </a>
+                            <a href="https://twitter.com/OberdanFerreira" target="_blank">
+                                <span class="dart-text uk-margin-right	" uk-icon="twitter"></span>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-width-1-4@m uk-width-1-1@s">
+                <div class="uk-card uk-card-default uk-card-hover uk-card-small uk-margin-small">
+                    <div class="uk-card-media-top">
+                        <img width="100%" src="../../../assets/img/team/william.jpeg" alt=" William S Rodriguez" />
+                    </div>
+                    <div class="uk-card-body">
+                        <h5 class="uk-card-title uk-margin-remove-bottom">
+                            William S Rodriguez
+                        </h5>
+                        <span class="uk-text-meta dart-text uk-text-center">
+                            Master Software Engineer at ArcTouch - Mobile &
+                            Connected Experiences
+                        </span>
+                    </div>
+                    <div class="uk-card-footer">
+                        <span>
+                            <a href="https://www.linkedin.com/in/willbuildapps/" target="_blank">
+                                <span class="dart-text uk-margin-right	" uk-icon="linkedin"></span>
+                            </a>
+                            <a href="https://twitter.com/willbuildapps" target="_blank">
+                                <span class="dart-text uk-margin-right	" uk-icon="twitter"></span>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="uk-padding"></div>
+</section>
+<!-- footer -->
+<footer class="uk-section-secondary black-background ">
+    <div class="uk-container uk-section">
+        <div class="uk-grid uk-child-width-1-3@l" data-uk-grid>
+            <div>
+                <h4>Xamarin Summit <span class="custom-heading">Live</span></h4>
+                <ul class="uk-list uk-list-bullet">
+                    <li>
+                        <a href="mailto:ola@xamarinsummit.com.br" title="Informações sobre Parceira e Patrocínio">
+                            Informações sobre
+                            Parcerias e Patrocínio
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:ola@xamarinsummit.com.br" title="Contato">Contato</a>
+                    </li>
+                    <li>
+                        <a href="https://www.sympla.com.br/xamarin-summit-2020__909089" title="Inscrições">Inscrições</a>
+                    </li>
+                    <li>
+                        <a href="/code-of-conduct" title="Código de Conduta">Código de Conduta</a>
+                    </li>
+                </ul>
+            </div>
 
-Xamarin Summit on Blazor
-
-<SurveyPrompt Title="How is Blazor working for you?" />
+          <!--  <div>
+          <h4>Edições anteriores</h4>
+          <ul class="uk-list uk-list-bullet">
+              <li>
+                  <a href="/2020" target="blank" title="2020">2020</a>
+              </li>
+              <li>
+                  <a href="/2019" target="blank" title="2019">2019</a>
+              </li>
+              <li>
+                  <a href="/past/2018/index.html" target="blank" title="2018">2018</a>
+              </li>
+              <li>
+                  <a href="/past/2017/index.html" target="blank" title="2017">2017</a>
+              </li>
+              <li>
+                  <a href="/past/2016/index.html" target="blank" title="2016">2016</a>
+              </li>
+          </ul>
+      </div>
+        -->
+            <div>
+                <h4>Social Media</h4>
+                <a href="https://www.facebook.com/XamarinSummit/" class="uk-icon-button  uk-margin-small-right" data-uk-icon="facebook"></a>
+                <a href="https://twitter.com/XamarinSummit/" class="uk-icon-button  uk-margin-small-right" data-uk-icon="twitter"></a>
+                <a href="https://www.instagram.com/XamarinSummitBR/" class="uk-icon-button" data-uk-icon="instagram"></a>
+            </div>
+        </div>
+    </div>
+    <div class="uk-section uk-section-xsmall" style="background-color: rgba(0,0,0,0.15)">
+        <div class="uk-container">
+            <div class="uk-grid uk-child-width-1-1@s uk-text-center" data-uk-grid>
+            </div>
+        </div>
+    </div>
+</footer>
